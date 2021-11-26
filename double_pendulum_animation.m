@@ -41,9 +41,9 @@ imageY2 = -(height/4)*y2 + hCentre;
 path = uigetdir('.\', '选择动画帧序列保存路径');
 Fig = waitbar(0, '正在处理帧...');
 for i = 1:nFrames
-    image = zeros(height, width);
+    image = zeros(height, width, 3);
     for j = 1:n
-        imageTemp = zeros(height, width);
+        imageTemp = zeros(height, width, 3);
         imageTemp = insertShape(imageTemp, 'Line', ...
             [wCentre hCentre imageX1((i-1)*n+j) imageY1((i-1)*n+j);
             imageX1((i-1)*n+j) imageY1((i-1)*n+j) imageX2((i-1)*n+j) imageY2((i-1)*n+j)],...
